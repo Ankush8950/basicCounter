@@ -12,7 +12,7 @@
       <h1>Counter</h1>
       <div class="counter">
         <button onclick="decrease()">-</button>
-        <h1 id="number"></h1>
+        <h1 id="number">0</h1>
         <button onclick="increase()">+</button>
       </div>
       <p id="error">Error</p>
@@ -24,9 +24,13 @@
     let click = 0;
     //  decrease order function
     function decrease(){
+      if(click > 0){
       click -= 1
       document.getElementById("number").innerHTML = click
       console.log(click)
+      }else{
+        document.getElementById("error").style.display = "initial"
+      }
     }
 
 
@@ -35,6 +39,7 @@
       click += 1
       document.getElementById("number").innerHTML = click
       console.log(click)
+      document.getElementById("error").style.display = "none"
     }
 
   </script>
